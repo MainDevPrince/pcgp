@@ -6,8 +6,8 @@
     $lastName = $_POST["lastName"];
     $email = $_POST["email"];
     $mobile = $_POST["mobile"];
-    $investamount = $_POST["investamount"];
-    $investperiod = $_POST["investperiod"];*/
+    $investamount = $_POST["investamount"];*/
+    $investperiod = $_POST["investperiod"];
     $description = $_POST["description"];
     // $updatedDescription = str_replace("\\'", "'", $description);
     $timestamp = date("Y-m-d H:i:s");
