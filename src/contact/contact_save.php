@@ -1,5 +1,5 @@
 <?php
-    /*include "../config/db_config.php";   */
+    include "../config/db_config.php";   
     include "../utils/functions.php";   
 
     $firstName = $_POST["firstName"];
