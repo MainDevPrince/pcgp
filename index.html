@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Real Estate Solarenergy Hydrogentechnology Coin" />
+    <meta name="author" content="Nicolas Wroblewski" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+    <!-- ScrollReveal Js -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/scroll-reveal.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <style>
+        .wallet-banner {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .wallet-banner__text {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .price-banner {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .price-banner__text {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .benefit-image-section {
+            margin-top: -100px;
+        }
+
+        .benefit-image-section>img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            transform: translateY(50%);
+        }
+
+        .video {
+            width: 50%;
+        }
+
+        .main-container {
+            width: 100%;
+            padding: 5% 0 0 0;
+            font-family: "Rubik", sans-serif;
+            background: #004200;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .main-header-content-principal__title span {
+            color: #90EE90;
+        }
+
+        .main-header-content-principal__btn {
+            background-color: #5cb85c;
+        }
+
+        .main-header-content-principal__btn:hover {
+            background-color: #90EE90;
+        }
+
+        .main-content .why-us-wrapper .stats-section__reference .fas {
+            color: #004200;
+            background-color: #5cb85c;
+        }
+
+        .main-content .why-us-wrapper .benefits-section__title span {
+            color: #5cb85c;
+        }
+        .main-content .cryptocurrencies-section{
+            background-color: #008300;
+            color: #fff;
+        }
+        .main-content .cryptocurrencies-section .cryptocurrencies-info-cards .info-card:hover {
+            background-color: #004200;
+        }
+
+        .main-content .cryptocurrencies-section .cryptocurrencies-info-cards .info-card .fa-ethereum {
+            background-color: #5cb85c;
+        }
+
+        .cta-section {
+            background-color: #004200;
+        }
+
+        .main-footer {
+            width: 100%;
+            background-color: #004200;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+        }
+
+        .big-ball {
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+            font-size: 150px;
+        }
+
+        .inline-image {
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 60%;
+            transform: translate(-50%, -50%);
+        }
+
+        #cookie-dialog {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            padding: 20px;
+            display: none;
+            font-size: 1.4rem;
+        }
+
+        #privacy-link {
+            color: rgb(100, 100, 240);
+            cursor: pointer;
+        }
+
+        #Privacy_modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background-color: #1f1d1d;
+            padding: 20px;
+            display: none;
+            opacity: 0;
+            /* transition: opacity 0.3s ease-in-out; */
+        }
+
+        #Privacy_modal.show {
+            opacity: 1;
+        }
+
+        #cookie-text {
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+
+        button#cookie-accept,
+        button#cookie-decline {
+            /* Add necessary styles for the buttons */
+            width: 200px;
+            margin: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #fff;
+            /* Adjust the width as needed */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #cookie-buttons {
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button#cookie-accept:hover,
+        button#cookie-decline:hover {
+            background-color: #fff;
+            color: #000;
+            /* Adjust the hover styles as needed */
+        }
+
+        @media (max-width: 576px) {
+            .benefit-image-section {
+                margin-top: -100px;
+            }
+
+            .benefit-image-section>img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                transform: translateY(50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video {
+                width: 100%;
+                margin-top: 30px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            /* Adjust button width for mobile devices */
+            #cookie-buttons {
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            button#cookie-accept,
+            button#cookie-decline {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <title>PCGP centralized platform</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--
+    <div class="wallet-banner">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            <p class="wallet-banner__text">Wallet login function is temporarily unavailable. You can still access your wallets using the provided links. We apologize for any inconvenience.</p>
+        </marquee>
+    </div>-->
+    <div class="price-banner">
+        <marquee behavior="scroll" direction="left" scrollamount="5"> <!-- Adjust scrollamount value as needed -->
+            <p class="price-banner__text"> <span id="header_section_coin">Power Coin GROOT & PANDA Price</span> <span
+                    class="rate">2.28</span> <span id="header_section_currency">EUR</span></p>
+        </marquee>
+    </div>
+    <div class="main-container" style="padding-top: 10px;">
+        <div class="d-flex justify-content-end" style="height:50px; margin-right:30px">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle lang-selected" type="button" id="menu1"
+                    data-toggle="dropdown" style="color: white; font-size:16px"><img
+                        src="https://cdn.weglot.com/flags/rectangle_mat/gb.svg" width="30" height="20" role="none"
+                        alt="English flag" class="wg-flag mr-2">English
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="width:120px">
+                    <li role="presentation" class="p-3" style="font-size:14px"><a role="menuitem" tabindex="-1" href="#"
+                            class="lang-select" data-lang="en"><img
+                                src="https://cdn.weglot.com/flags/rectangle_mat/gb.svg" width="30" height="20"
+                                role="none" alt="English flag" class="wg-flag mr-2">English</a></li>
+                    <li role="presentation" class="p-3" style="font-size:14px"><a role="menuitem" tabindex="-1" href="#"
+                            class="lang-select" data-lang="cn"><img
+                                src="https://cdn.weglot.com/flags/rectangle_mat/cn.svg" width="30" height="20"
+                                role="none" alt="Chinese flag" class="wg-flag mr-2">Chinese</a></li>
+                    <li role="presentation" class="p-3" style="font-size:14px"><a role="menuitem" tabindex="-1" href="#"
+                            class="lang-select" data-lang="de"><img
+                                src="https://cdn.weglot.com/flags/rectangle_mat/de.svg" width="30" height="20"
+                                role="none" alt="German flag" class="wg-flag mr-2">German</a></li>
+                    <li role="presentation" class="p-3" style="font-size:14px"><a role="menuitem" tabindex="-1" href="#"
+                            class="lang-select" data-lang="es"><img
+                                src="https://cdn.weglot.com/flags/rectangle_mat/es.svg" width="30" height="20"
+                                role="none" alt="Spanish flag" class="wg-flag mr-2">Spanish</a></li>
+                </ul>
+            </div>
+        </div>
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Header navbar -->
+                <nav class="main-header-navbar">
+                    <img src="./assets/Logo.svg" alt="" class="main-header-navbar__logo" />
+
+                    <ul class="main-header-navbar__nav" style="max-width: none;">
+                        <li class="main-header-navbar__nav__item">
+                            <a href="#products" class="main-header-navbar__nav__link">PCGP</a>
+                        </li>
+                        <li class="main-header-navbar__nav__item">
+                            <a href="./contact-us.html" class="main-header-navbar__nav__link" id="nav_buy">Buy</a>
+                        </li>
+                        <li class="main-header-navbar__nav__item">
+                            <a href="#about" class="main-header-navbar__nav__link" id="nav_marketplace">Marketplace</a>
+                        </li>
+                        <li class="main-header-navbar__nav__item">
+                            <a href="./contact-us.html" class="main-header-navbar__nav__link"
+                                id="nav_contact">Contact</a>
+                        </li>
+                        <li class="main-header-navbar__nav__item">
+                            <a href="./about-coin.html" class="main-header-navbar__nav__link" id="nav_coin">GROOT &
+                                PANDA</a>
+                        </li>
+                    </ul>
+
+                    <div class="main-header-navbar__login">
+                        <a href="wallet-login.html" class="main-header-navbar__login__login-btn"
+                            id="nav_wallet">Wallet</a>
+                        <a href="wallet-create.html" class="main-header-content-principal__btn" id="nav_create">Create
+                            new Wallet</a>
+                    </div>
+                </nav>
+
+                <!-- Header content -->
+                <div class="main-header-content-container">
+                    <div class="main-header-content-principal">
+
+                        <h1 class="main-header-content-principal__title">
+                            PCGP
+
+                        </h1>
+                        <h4 class="main-header-content-principal__title" id="first_section_logo">
+                            P<span>ower</span> C<span>oin</span> G<span>ROOT</span> & P<span>ANDA</span>
+
+                        </h4>
+
+                        <h4 class="main-header-content-principal__title" id="first_section_title">
+                            Fastest & <span>secure</span> centralized cryptoplatform to invest in !
+
+                        </h4>
+                        <p class="main-header-content-principal__description" id="first_section_description">
+                            Buy and Sell our Cryptocurrency within our marketplace or buy directly from us
+                            and get secured with a credit contract!
+                        </p>
+                        <a href="./contact-us.html" class="main-header-content-principal__btn"
+                            id="first_section_button">Get started <i class="fas fa-angle-right"></i></a>
+                    </div>
+                    <div class="video">
+                        <img src="./assets/header-assets/circle.gif" style="width: 100%;border-radius: 30px;">
+                        <p style="text-align: center;font-size: 20px;color: orange;margin-top: 15px;">PCGP</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main content -->
+
+        <main class="main-content">
+            <!-- Why us section -->
+            <section class="why-us-wrapper">
+                <!-- Stats -->
+                <div class="stats-section">
+                    <div class="stats-section__reference">
+                        <a data-toggle="modal" data-target="#price-chart" style="cursor: pointer;">
+                            <!--<i class="fas fa-chart-line"></i>-->
+                            <div class="fas position-relative" style="width: 75px; height: 75px;">
+                                <img src="./assets/rocket.png" class="position-absolute inline-image" />
+                            </div>
+                        </a>
+                        <h3 class="stats-section__reference__title">-</h3>
+                        <p class="stats-section__reference__description" id="second_section_first">
+                            Price Chart
+                        </p>
+                    </div>
+                    <div class="stats-section__reference">
+                        <!-- <i class="fas fa-globe"></i> -->
+                        <video style="width:100%;height:auto;border-radius: 10px;" preload autoplay playsinline
+                            class="mb-2" autoplay loop controls id="vid">
+                            <source src="./assets/sam.mp4" type=video/mp4>
+                            <source src="./assets/sam.webm" type=video/webm>
+                        </video>
+                        <p class="stats-section__reference__description" id="second_section_third_">
+                            customers from all <br />
+                            over the world ❤️
+                        </p>
+                    </div>
+                    <div class="stats-section__reference">
+                        <a href="https://rshcoin.com/">
+                            <div style="background-image: url(./assets/coin.png);border-radius: 50%; width: 75px; height: 75px; background-size: 100%; margin: auto;"
+                                class="mb-5">
+                            </div>
+                        </a>
+                        <p class="stats-section__reference__description" id="second_section_second_">
+                            RSHC International
+                            <br /> our main company
+                        </p>
+                    </div>
+                </div>
+
+                <div id="myCarousel" class="carousel slide mb-5" data-interval="1000" data-ride="carousel"
+                    style="width: 50%;">
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                        <li data-target="#myCarousel" data-slide-to="5"></li>
+                        <li data-target="#myCarousel" data-slide-to="6"></li>
+                        <li data-target="#myCarousel" data-slide-to="7"></li>
+                    </ul>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/carousel/1.jpg" alt="Los Angeles">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/2.jpg" alt="Chicago">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/3.jpg" alt="New York">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/4.jpg" alt="Los Angeles">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/5.jpg" alt="Chicago">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/6.jpg" alt="New York">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/7.jpg" alt="Los Angeles">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/8.jpg" alt="Chicago">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+
+                <div style="padding: 0 10px;">
+                    <h2 style="text-align: center;font-size: 28px;" id="second_section_about_title">
+                        PCGP, Power Coin <br />GROOT & PANDA
+                    </h2>
+                    <p style="width:70%;margin:auto;font-size:18px;margin-top:20px" id="second_section_about_first">
+                        1. protects against rising inflation.
+                    </p>
+                    <p style="width:70%;margin:auto;font-size:18px" id="second_section_about_second">
+                        2. high and secure returns.
+                    </p>
+                    <p style="width:70%;margin:auto;font-size:18px" id="second_section_about_third">
+                        3. growing bamboo for furnitures and many other thing‘s.
+                    </p>
+                    <p style="width:70%;margin:auto;font-size:18px" id="second_section_about_fourth">
+                        4. NO software only, like Bitcoin, Ethereum and ……
+                    </p>
+                    <p style="width:70%;margin:auto;font-size:18px" id="second_section_about_fifth">
+                        5. anyone who continues to rely on shares will experience the blue miracle, the worst economic
+                        crisis is imminent.
+                    </p>
+                    <p style="width:70%;margin:auto;font-size:18px" id="second_section_about_sixth">
+                        6. our concept is based on nature products, which are growing fast.
+                    </p>
+                    <p style="width:70%;margin:auto;font-size:20px;margin-top:20px;margin-bottom:30px"
+                        id="second_section_about_final">
+                        Now it‘s time to invest in your future.<br />
+                        Save the planet <br /><span class='big-ball'>🌎</span>
+                    </p>
+                </div>
+
+                <div id="second-carousel" class="carousel slide mb-5" data-ride="carousel" style="width: 50%;">
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#second-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#second-carousel" data-slide-to="1"></li>
+                        <li data-target="#second-carousel" data-slide-to="2"></li>
+                        <li data-target="#second-carousel" data-slide-to="3"></li>
+                        <li data-target="#second-carousel" data-slide-to="4"></li>
+                        <li data-target="#second-carousel" data-slide-to="5"></li>
+                        <li data-target="#second-carousel" data-slide-to="6"></li>
+                    </ul>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/carousel/9.jpg" alt="Los Angeles">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/10.jpg" alt="Chicago">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/11.jpg" alt="New York">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/12.jpg" alt="Los Angeles">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/13.jpg" alt="Chicago">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/14.jpg" alt="New York">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="./assets/carousel/15.jpg" alt="Los Angeles">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#second-carousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#second-carousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+
+                <!-- Why us -->
+                <div class="why-us-section" id="about">
+                    <div class="col-md-6 col-sm-12" style="order:1">
+                        <h2 class="why-us-section__content__title" id="second_section_why_title">
+                            Grow Bamboo, <span>Grow!</span>
+                        </h2>
+                        <p class="why-us-section__content__description" id="second_section_why_description">One of the
+                            most interesting features of giant bamboo is its unsurpassed growing speed. During the
+                            growing season, the shoots will sprout from the ground and reach their final length of up to
+                            30 m height within a couple of months, with a maximum recorded growing speed of up to 1
+                            meter a day. In fact, it holds the Guinness World Record of fastest growing
+                            plant.<br />Although the common perception is that bamboo mainly grows in Asia, its growing
+                            area is actually evenly distributed around the globe. Giant species, which have the most
+                            potential for industrial processing and economic development, mainly derive from
+                            (sub)tropical areas, usually in developing countries or emerging economies.
+
+                        </p>
+                        <a href="./contact-us.html" class="main-header-content-principal__btn learn_more">Learn More</a>
+                    </div>
+                    <img src="./assets/features-section-assets/kind.jpg" alt="" class="col-md-6 col-sm-12 mt-4" />
+                </div>
+
+                <!-- Benefits -->
+                <div class="benefits-section" style="flex-flow: column nowrap;">
+                    <h2 class="benefits-section__title" id="second_section_benefit_title">
+                        Check how much you can <span>earn</span>
+                    </h2>
+                    <p class="benefits-section__description" id="second_section_benefit_description">
+                        Let's see how the coin is performing! And how you can be a part of it. Join the PCGP
+                        Foundation now and profit directly!
+                    </p>
+
+                    <div class="benefit-image-section">
+                        <!--
+                        <h4 class="card-info__title">ESTIMATED 24 HOUR REVENUE:</h4>
+                        <p class="card-info__description">---<span>(---)</span></p>
+                        <span class="card-info__advice">Revenue will changed based on investments</span>
+                        -->
+                        <img src="./assets/features-section-assets/main.jpg" alt="Detailed statistics" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cryptocurrencies section -->
+            <section class="cryptocurrencies-section" id="products">
+                <h2 class="cryptocurrencies-section__title" style="margin:50px auto" id="third_section_title">
+                    Trade securely and market our coin PCGP!
+                </h2>
+                <div class="cryptocurrencies-info-cards">
+
+                    <div class="info-card" style="padding: 10px;">
+                        <i class="fab fa-ethereum"></i>
+                        <h3 class="info-card__title" id="third_section_subtitle">Fundamentally Different from Trees</h3>
+                        <p class="info-card__description" style="width:100%;color: #fff;" id="third_section_description">
+                            In general, bamboo is hollow (although some solid species exist), with separate sections at
+                            irregular distances formed by transverse diaphragms in the cavity of the stem. These
+                            diaphragms are visible on the wall of the stem as ring-shaped protrusions and this is also
+                            where the branches with the leaves sprout from, usually from the higher nodes.
+                        </p>
+                        <a href="./contact-us.html" class="main-header-content-principal__btn"
+                            id="third_section_invest">Start investing <i class="fas fa-angle-right"></i></a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Features section -->
+            <section class="features-section" id="features">
+                <h2 class="features-section__title" id="fourth_section_title">
+                    Market sentiments, portfolio, and run the infrastructure of your
+                    choice
+                </h2>
+
+                <article class="invest-smart-article">
+                    <div class="invest-smart-article__content">
+                        <h3 class="invest-smart-article__content__title" id="fourth_section_left_title">Invest Smart
+                        </h3>
+                        <p class="invest-smart-article__content__description"
+                            style="color:rgba(231, 231, 43, 0.9);font-size: 18px;text-align: left;"
+                            id="fourth_section_left_slogan">
+                            We save the planet with growing bamboo!
+                        </p>
+                        <a href="./contact-us.html" class="main-header-content-principal__btn learn_more">Learn More</a>
+                    </div>
+                    <div style="font-size: 18px;background-color: #c7dee4;color: black;font-weight: 500;text-align: left;padding: 10px;border-radius: 4px;"
+                        class="col-sm-12 col-md-5" id="fourth_section_description">The Future Nature Coin.<br />
+                        PCGP is limited to ONE Billion Coins. 1.000.000.000.- with a guarantee of value and an enormous
+                        potential. The launch of our Coin was September 09. 23., it‘s initial price was 0,11 euro. It
+                        will be trade through our own exchange and or other‘s worldwide. More info in a private chat.
+                        <br /><br />
+                        <b>BUY your PCGPs now.</b>
+                    </div>
+                </article>
+                <style>
+                    .detailed-stats-article {
+                        font-size: 20px;
+                        text-align: justify;
+                        hyphens: auto;
+                    }
+                </style>
+                <article class="detailed-stats-article" 
+                    id="fourth_section_detailed_stats">
+                    <b>Bamboo Plantages</b><br />
+                    From a botanical point of view, bamboo belongs to the grasses, the
+                    Graminea, and is therefore not a tree. Bamboo is a collective name for a group of botanical
+                    species. Although the complete taxonomy is still evolving, current estimations are that around 1500
+                    different varieties exist. There are considerable differences in size, colour, node distribution and
+                    configuration, mechanical properties and climatic preferences. <br />Some giant species reach up to 30 m
+                    with cross sections of up to 30 cm per stem, whereas some sorts do not reach above 1 m in height and
+                    1 cm in diameter. Depending on the climatic circumstances, there can also be a lot of
+                    variation in size and quality of the stems from the same species. Stems are larger in fertile,
+                    moist climates and smaller in dry sandy climates.
+                </article>
+
+                <article class="grow-profit-article">
+                    <div class="grow-profit-article__content">
+                        <h3 class="grow-profit-article__content__title" id="fourth_section_profit_title">
+                            Grow your profit and track your investments
+                        </h3>
+                        <p class="grow-profit-article__content__description" id="fourth_section_profit_description">
+                            Let‘s work together to make the world a better place!
+                        </p>
+                        <a href="./contact-us.html" class="main-header-content-principal__btn learn_more">Learn More</a>
+                    </div>
+
+                    <img src="./assets/features-section-assets/coin.png" alt="Profit graphic"
+                        class="grow-profit-article__graphic" />
+                </article>
+            </section>
+        </main>
+
+        <!-- Call To Action -->
+        <aside class="cta-section" id="contact">
+            <div class="cta-section__content">
+                <h3 class="cta-section__content__title" id="cta_section_title">Start winning now</h3>
+                <p class="cta-section__content__description" id="cta_section_description">
+                    Join now with PCGP to get the latest news and start investing
+                </p>
+            </div>
+            <div class="cta-section__subscribe">
+                <input type="email" class="cta-section__subscribe__input" placeholder="Enter your email"
+                    id="subscribe_email" style="font-size:16px" />
+                <a href="#" class="cta-section__subscribe__btn" id="Subscribe_button">Subscribe</a>
+            </div>
+        </aside>
+
+        <!-- Main footer -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <img src="./assets/Logo.svg" alt="PCGP" class="main-footer__logo" />
+
+                <!-- Footer navs -->
+                <nav class="main-footer-navbar">
+                    <!-- Quick Link nav -->
+                    <ul class="main-footer-navbar__nav">
+                        <li class="main-footer-navbar__nav__item">
+                            <h3 class="main-footer-navbar__nav__title" id="footer_quick_title">Quick Link</h3>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="#" class="main-footer-navbar__nav__link" id="footer_quick_home">Home</a>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="#products" class="main-footer-navbar__nav__link">PCGP</a>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="./contact-us.html" class="main-footer-navbar__nav__link" id="footer_quick_buy">Buy</a>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="#about" class="main-footer-navbar__nav__link"
+                                id="footer_quick_marketplace">Marketplace</a>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="#contact" class="main-footer-navbar__nav__link"
+                                id="footer_quick_contact">Contact</a>
+                        </li>
+                        <!--
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="index-de.html" class="main-footer-navbar__nav__link">German</a>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="index-es.html" class="main-footer-navbar__nav__link">Español</a>
+                        </li>
+                        -->
+                    </ul>
+                    <!-- Resources link -->
+                    <ul class="main-footer-navbar__nav">
+                        <li class="main-footer-navbar__nav__item">
+                            <h3 class="main-footer-navbar__nav__title" id="footer_resources_title">Resources</h3>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="brochure-english.pdf" class="main-footer-navbar__nav__link"
+                                id="footer_resources_brochure">Download brochure</a>
+                        </li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a href="Whitepaper.pdf" class="main-footer-navbar__nav__link"
+                                id="footer_resources_whitepaper">Download Whitepaper</a>
+                        </li>
+                        <li class="main-footer-navbar__nav__item"><a class="main-footer-navbar__nav__link"
+                                href="./terms.html">Terms of Use</a></li>
+                        <li class="main-footer-navbar__nav__item"><a class="main-footer-navbar__nav__link"
+                                href="./cookies.html">Cookies Policy</a></li>
+                        <li class="main-footer-navbar__nav__item">
+                            <a class="main-footer-navbar__nav__link" href="./privacy.html">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Payment systems -->
+                <div class="payment-systems">
+                    <h3 class="payment-systems__title" id="footer_payment_title">
+                        We accept following payment systems
+                    </h3>
+                    <div class="payment-systems-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-bitcoin"></i>
+                        <i class="fab fa-paypal"></i>
+                    </div>
+                </div>
+
+                <!-- Copy and social links -->
+                <div class="copy-and-social">
+                    <h3 class="copy-and-social__copy" style="width: 100%;" id="footer_copyright">
+                        PCGP is a project of RSHC International FZCO, the world's first central crypto currency.<br />
+                        ©2023 RSHC All rights reserved, <br />
+                        - RSHC International FZCO, Silicon Oasis, DDP, IFZA Building A 2, Dubai, UAE
+                    </h3>
+                </div>
+
+
+
+            </div>
+            <div id="cookie-dialog">
+                <p id="cookie-text">We use cookies on our website to see how you interact with it.
+                    By agree. you agree to our use of such cookies. Privacy Policy.</p>
+                <div id='cookie-buttons'>
+                    <button id="cookie-accept">Accept</button>
+                    <button id="cookie-decline">Decline</button>
+                </div>
+            </div>
+
+            <script>
+                window.addEventListener("load", function () {
+                    // Check if the cookie is not set
+                    if (!document.cookie.includes("cookie_accepted=true")) {
+                        // Display the cookie dialog box
+                        document.getElementById("cookie-dialog").style.display = "block";
+                    }
+                });
+
+                document.getElementById("cookie-accept").addEventListener("click", function () {
+                    // Set the cookie when the user accepts
+                    document.cookie = "cookie_accepted=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+
+                    // Hide the cookie dialog box
+                    document.getElementById("cookie-dialog").style.display = "none";
+                });
+
+                document.getElementById("cookie-decline").addEventListener("click", function () {
+                    // Hide the modal
+                    document.getElementById("cookie-dialog").style.display = "none";
+                });
+            </script>
+        </footer>
+
+        <!-- Attribution footer -->
+        <div class="modal" id="price-chart" style="color: black">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h1 id="price_chart_title">Price Chart Curve</h1>
+                        <button type="button" class="close" data-dismiss="modal"
+                            style="font-size: 25px;">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="chart-container" style="height:400px">
+                            <canvas id="myChart" width="800" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script>
+        // Get the modal element
+        var modal = document.getElementById("privacyPolicyModal");
+
+        // Get the link element
+        // var link = document.getElementById("privacyPolicyLink");
+
+        // Get the close button element
+        var closeBtn = document.getElementsByClassName("closeprivacy")[0];
+
+        // Open the modal when the link is clicked
+        // link.addEventListener("click", function () {
+        //     modal.style.display = "block";
+        // });
+
+        // Close the modal when the close button is clicked
+        // closeBtn.addEventListener("click", function () {
+        //     modal.style.display = "none";
+        // });
+
+        // Close the modal when clicking outside the modal
+        window.addEventListener("click", function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+        $('#myCarousel').carousel({
+            interval: 3000,
+            cycle: true
+        });
+        $('#second-carousel').carousel({
+            interval: 3000,
+            cycle: true
+        });
+        $.get("./src/utils/get_rate.php",
+            function (response) {
+                var resp = JSON.parse(response);
+                var rate = resp.rate.amount;
+                $('.rate').text(rate);
+            }
+        );
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+        }
+        $("#Subscribe_button").click(function (e) {
+            e.preventDefault();
+            $.post("./src/contact/subscribe_save.php",
+                {
+                    email: $("#subscribe_email").val()
+                },
+                function (response) {
+                    var resp = JSON.parse(response);
+                    if (resp.success) {
+                        alert("Successfully registered your email for subscribe");
+                    }
+                }
+            );
+        });
+
+        $.get("./src/utils/get_rate_list.php",
+            function (response) {
+                var resp = JSON.parse(response);
+                drawChart(resp.rate.dates, resp.rate.rates);
+            }
+        );
+
+        function drawChart(label, datas) {
+            // const labels = [new Date('2023-07-01'), new Date('2023-07-15'), new Date('2023-08-01'), new Date('2023-08-15'), new Date('2023-09-01'), new Date('2023-09-15'), new Date('2023-09-19')];
+            // const data = [1.22, 1.34, 1.52, 1.98, 2.5, 3.1, 3.26];
+            const labels = label;
+            const data = datas;
+
+            // Chart erstellen
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'PCGP Price',
+                        data: data,
+                        tension: 0.5,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        xAxes: [{
+                            type: 'time',
+                            ticks: {
+                                source: 'labels',
+                                minRotation: 45
+                            },
+                            time: {
+                                unit: 'day',
+                                displayFormats: {
+                                    day: 'D.M'
+                                },
+                                tooltipFormat: 'D.M.YYYY'
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'EUR'
+                            }
+                        }]
+                    },
+                    plugins: {
+                        tooltip: {
+                            intersect: false,
+                        }
+                    }
+                }
+            });
+        }  
+    </script>
+</body>
+
+</html>
