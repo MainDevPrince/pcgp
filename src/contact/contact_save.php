@@ -16,7 +16,7 @@
     VALUES ('$firstName','$lastName','$email','$mobile','$description','$investamount','$investperiod','$timestamp')";
     mysqli_query($con, $sql);
 
-
+*/
 
     function encrypt($data, $password) {
         $method = "aes-256-cbc";
@@ -26,7 +26,7 @@
         $encrypted = openssl_encrypt($data, $method, $key, OPENSSL_RAW_DATA, $iv);
         $encoded = base64_encode($salt . $iv . $encrypted);
         return $encoded;
-    }*/
+    }
 
 
 
