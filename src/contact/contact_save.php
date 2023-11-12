@@ -1,5 +1,5 @@
 <?php
-    include "../config/db_config.php";   
+    /*include "../config/db_config.php";   
     include "../utils/functions.php";   
 
     $firstName = $_POST["firstName"];
@@ -26,7 +26,7 @@
         $encrypted = openssl_encrypt($data, $method, $key, OPENSSL_RAW_DATA, $iv);
         $encoded = base64_encode($salt . $iv . $encrypted);
         return $encoded;
-    }
+    }*/
 
 
 
