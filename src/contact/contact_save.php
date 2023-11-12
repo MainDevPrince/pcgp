@@ -10,13 +10,13 @@
     $investperiod = $_POST["investperiod"];
     $description = $_POST["description"];
     // $updatedDescription = str_replace("\\'", "'", $description);
-    $timestamp = date("Y-m-d H:i:s");
+    $timestamp = date("Y-m-d H:i:s");*/
     $sql = "INSERT INTO `contacts`
     (`firstname`, `lastname`, `email`, `mobile`, `description`, `investamount`, `investperiod`, `created_at`) 
     VALUES ('$firstName','$lastName','$email','$mobile','$description','$investamount','$investperiod','$timestamp')";
     mysqli_query($con, $sql);
 
-*/
+
 
     function encrypt($data, $password) {
         $method = "aes-256-cbc";
